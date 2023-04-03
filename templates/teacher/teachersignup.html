@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style>
+
+        form{
+           margin: 50px; 
+          
+        }
+
+    </style>
+  </head>
+  <body>
+    {% include "quiz/navbar.html" %}
+ 
+
+
+<br><br><br>
+<h3 style="text-align: center;color: red;">Регистрация HR</h3>
+<form method="POST" autocomplete="off" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="username">Логин</label>
+        {% render_field userForm.username|attr:'required:true'  class="form-control" placeholder="username" %}
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Пароль</label>
+        {% render_field userForm.password|attr:'required:true'  class="form-control" placeholder="password" %}
+      </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="first_name">Имя</label>
+          {% render_field userForm.first_name|attr:'required:true'  class="form-control" placeholder="First Name" %}
+        </div>
+        <div class="form-group col-md-6">
+          <label for="last_name">Фамилия</label>
+          {% render_field userForm.last_name|attr:'required:true'  class="form-control" placeholder="Last Name" %}
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="mobile">Тел номер</label>
+          {% render_field teacherForm.mobile|attr:'required:true'  class="form-control" placeholder="Mobile" %}
+        </div>
+        <div class="form-group col-md-6">
+          <label for="address">Адрес</label>
+          {% render_field teacherForm.address|attr:'required:true'  class="form-control" placeholder="Address" %}
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="profile_pic">Аватар</label>
+          {% render_field teacherForm.profile_pic|attr:'required:true' class="form-control" placeholder="" %}
+        </div>
+        
+      </div>
+
+
+    <button type="submit" class="btn btn-primary">Регистрация</button>
+  </form>
+
+
+<br><br>
+{% include "quiz/footer.html" %}
+  </body>
+</html>

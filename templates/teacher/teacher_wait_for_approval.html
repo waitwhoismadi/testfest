@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+
+
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+  </style>
+  <body>
+    {% include "quiz/navbar.html" %}
+
+      <div class="jumbotron" style="margin-top: 0px;
+        margin-bottom: 0px;">
+        <h1 class="display-4">Здравствуйте {{request.user.first_name}}</h1>
+        <p class="lead">Ваш аккаунт еще не подтвержден <br><br>Наши админы проверяют вас <br><br> Скоро вы получите ответ</p>
+        <hr class="my-4">
+        <p>Приходите позже</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="/logout" role="button">Выйти</a>
+        </p>
+      </div>
+
+{% include "quiz/footer.html" %}
+  </body>
+</html>
